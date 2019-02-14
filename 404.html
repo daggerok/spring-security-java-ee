@@ -468,7 +468,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span id="author" class="author">Maksim Kostromin</span><br>
 <span id="email" class="email"><a href="mailto:daggerok@gmail.com">daggerok@gmail.com</a></span><br>
 <span id="revnumber">version 0.0.1,</span>
-<span id="revdate">2019-02-14 22:18:26 UTC</span>
+<span id="revdate">2019-02-14 22:22:28 UTC</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -494,7 +494,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="listingblock">
 <div class="title">src/main/java/com/github/daggerok/springsecurity/SpringSecurityConfig.java</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Configuration
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">@Configuration
 @EnableWebSecurity
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
@@ -516,7 +516,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 <div class="listingblock">
 <div class="title">src/main/java/com/github/daggerok/springsecurity/SecurityWebApplicationInitializer.java</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class SecurityWebApplicationInitializer extends AbstractSecurityWebApplicationInitializer {
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">public class SecurityWebApplicationInitializer extends AbstractSecurityWebApplicationInitializer {
 
   public SecurityWebApplicationInitializer() {
     super(SpringSecurityConfig.class);
@@ -549,14 +549,14 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">buildscript {
   ext {
-    springSecuriotyVersion = '4.2.3.RELEASE'
+    springSecurityVersion = '4.2.3.RELEASE'
   }
 }
 dependencies {
   implementation 'commons-logging:commons-logging:1.2'
-  implementation "org.springframework.security:spring-security-web:$springSecuriotyVersion"
-  implementation "org.springframework.security:spring-security-config:$springSecuriotyVersion"
-  implementation "org.springframework.security:spring-security-taglibs:$springSecuriotyVersion"
+  implementation "org.springframework.security:spring-security-web:$springSecurityVersion"
+  implementation "org.springframework.security:spring-security-config:$springSecurityVersion"
+  implementation "org.springframework.security:spring-security-taglibs:$springSecurityVersion"
 }</code></pre>
 </div>
 </div>
@@ -650,7 +650,7 @@ http -a user1:user1Pass :8080/v1/</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2019-02-14 22:18:26 UTC
+Last updated 2019-02-14 22:22:28 UTC
 </div>
 </div>
 <!-- jquery -->
