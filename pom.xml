@@ -29,7 +29,7 @@
     <failOnMissingWebXml>false</failOnMissingWebXml>
     <h2.version>1.4.196</h2.version>
     <!-- tag::content[] -->
-    <spring.security.version>4.2.3.RELEASE</spring.security.version>
+    <spring.security.version>5.1.4.RELEASE</spring.security.version>
   </properties>
   <!-- end::content[] -->
 
