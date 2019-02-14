@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc maxdepth="4"?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>spring-security-java-ee-microprofile (0.0.1)</title>
+<date>2019-02-14 22:01:10 UTC</date>
+<author>
+<personname>
+<firstname>Maksim</firstname>
+<surname>Kostromin</surname>
+</personname>
+<email>daggerok@gmail.com</email>
+</author>
+<authorinitials>MK</authorinitials>
+<revhistory>
+<revision>
+<revnumber>0.0.1</revnumber>
+<date>2019-02-14 22:01:10 UTC</date>
+<authorinitials>MK</authorinitials>
+</revision>
+</revhistory>
+</info>
+<chapter xml:id="implementation">
+<title>Implementation</title>
+<section xml:id="spring-security">
+<title>spring-security</title>
+<formalpara>
+<title>src/main/java/com/github/daggerok/springsecurity/SpringSecurityConfig.java</title>
+<para>
+<programlisting language="xml" linenumbering="unnumbered">@Configuration
+@EnableWebSecurity
+public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
+
+  @Override
+  protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    auth.inMemoryAuthentication()
+          .withUser("user1")
+            .password("user1Pass")
+            .roles("USER")
+          .and()
+          .withUser("admin")
+            .password("adminPass")
+            .roles("ADMIN")
+    ;
+  }
+}</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>src/main/java/com/github/daggerok/springsecurity/SecurityWebApplicationInitializer.java</title>
+<para>
+<programlisting language="xml" linenumbering="unnumbered">public class SecurityWebApplicationInitializer extends AbstractSecurityWebApplicationInitializer {
+
+  public SecurityWebApplicationInitializer() {
+    super(SpringSecurityConfig.class);
+  }
+}</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>src/main/webapp/WEB-INF/applicationContext.xml</title>
+<para>
+<programlisting language="xml" linenumbering="unnumbered">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd"&gt;
+
+  &lt;context:component-scan base-package="com.github.daggerok.springsecurity" /&gt;
+
+&lt;/beans&gt;</programlisting>
+</para>
+</formalpara>
+</section>
+<section xml:id="gradle-dependencies">
+<title>gradle dependencies</title>
+<formalpara>
+<title>build.gradle</title>
+<para>
+<programlisting language="gradle" linenumbering="unnumbered">buildscript {
+  ext {
+    springSecuriotyVersion = '4.2.3.RELEASE'
+  }
+}
+dependencies {
+  implementation 'commons-logging:commons-logging:1.2'
+  implementation "org.springframework.security:spring-security-web:$springSecuriotyVersion"
+  implementation "org.springframework.security:spring-security-config:$springSecuriotyVersion"
+  implementation "org.springframework.security:spring-security-taglibs:$springSecuriotyVersion"
+}</programlisting>
+</para>
+</formalpara>
+</section>
+<section xml:id="maven-dependencies">
+<title>maven dependencies</title>
+<formalpara>
+<title>pom.xml</title>
+<para>
+<programlisting language="xml" linenumbering="unnumbered">  &lt;properties&gt;
+    &lt;spring.security.version&gt;4.2.3.RELEASE&lt;/spring.security.version&gt;
+  &lt;/properties&gt;
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-security-web&lt;/artifactId&gt;
+      &lt;version&gt;${spring.security.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-security-config&lt;/artifactId&gt;
+      &lt;version&gt;${spring.security.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-security-taglibs&lt;/artifactId&gt;
+      &lt;version&gt;${spring.security.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;commons-logging&lt;/groupId&gt;
+      &lt;artifactId&gt;commons-logging&lt;/artifactId&gt;
+      &lt;version&gt;1.2&lt;/version&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;</programlisting>
+</para>
+</formalpara>
+</section>
+</chapter>
+<chapter xml:id="readme">
+<title>README</title>
+<simpara>Read <link xl:href="https://daggerok.github.io/spring-security-java-ee-microprofile">project reference documentation</link></simpara>
+<formalpara>
+<title>gradle</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">./gradlew bundle
+
+./gradlew start
+# or
+java -jar build/*-microbundle.jar
+
+http :8080 -a admin:adminPass</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>maven</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">./mvnw -Pbundle
+
+./mvnw -Pstart
+# or
+java -jar target/*-microbundle.jar
+
+http -a user1:user1Pass :8080/v1/</programlisting>
+</para>
+</formalpara>
+</chapter>
+<chapter xml:id="links">
+<title>Links</title>
+<itemizedlist>
+<listitem>
+<simpara><link xl:href="https://github.com/daggerok/spring-security-java-ee-microprofile">GitHub repo</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xl:href="https://daggerok.github.io/spring-security-java-ee-microprofile">GitHub pages</link></simpara>
+</listitem>
+</itemizedlist>
+</chapter>
+</book>
