@@ -1,0 +1,75 @@
+ifdef::backend-html5[]
+= {root-project-name} ({project-version}) image:https://travis-ci.org/daggerok/{root-project-name}.svg?branch=master["Build Status", link={github-url}]
+endif::backend-html5[]
+ifndef::backend-html5[]
+= {root-project-name} ({project-version})
+endif::backend-html5[]
+////
+image:https://travis-ci.org/daggerok/{root-project-name}.svg?branch=master["Build Status", link=github-url]
+image:https://gitlab.com/daggerok/{root-project-name}/badges/master/build.svg["Build Status", link=gitlab-url]
+image:https://img.shields.io/bitbucket/pipelines/daggerok/{root-project-name}.svg["Build Status", link=bitbucket-url]
+////
+Maksim Kostromin <daggerok@gmail.com>
+{docdatetime}
+:docinfo:
+:doctype: book
+:toc: left
+:toclevels: 4
+:numbered:
+:icons: font
+:hide-uri-scheme:
+:revnumber: {project-version}
+:example-caption!:
+:source-highlighter: highlightjs
+
+== Implementation
+
+=== spring-security
+
+.src/main/java/com/github/daggerok/springsecurity/SpringSecurityConfig.java
+[source,xml]
+----
+include::../src/main/java/com/github/daggerok/springsecurity/SpringSecurityConfig.java[tag=content]
+----
+
+.src/main/java/com/github/daggerok/springsecurity/SecurityWebApplicationInitializer.java
+[source,xml]
+----
+include::../src/main/java/com/github/daggerok/springsecurity/SecurityWebApplicationInitializer.java[tag=content]
+----
+
+.src/main/webapp/WEB-INF/applicationContext.xml
+[source,xml]
+----
+include::../src/main/webapp/WEB-INF/applicationContext.xml[]
+----
+
+=== gradle dependencies
+
+.build.gradle
+[source,gradle]
+----
+include::../build.gradle[tags=content]
+----
+
+=== maven dependencies
+
+.pom.xml
+[source,xml]
+----
+include::../pom.xml[tags=content]
+----
+
+== README
+include::../README.adoc[tags=content]
+
+== Links
+
+ifdef::backend-html5[- link:./index.pdf[Documentation in PFD format]]
+- link:{github-url}[GitHub repo]
+- link:https://daggerok.github.io/{root-project-name}[GitHub pages]
+////
+- link:{gitlab-url}[GitLab repo]
+- link:https://daggerok.gitlab.io/{root-project-name}[GitLab pages]
+- link:{bitbucket-url}[BitBucket repo]
+////
