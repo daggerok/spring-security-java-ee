@@ -3,7 +3,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>spring-security-java-ee-microprofile (0.0.1)</title>
-<date>2019-02-14 22:11:47 UTC</date>
+<date>2019-02-14 22:18:26 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -15,7 +15,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2019-02-14 22:11:47 UTC</date>
+<date>2019-02-14 22:18:26 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -27,7 +27,7 @@
 <formalpara>
 <title>src/main/java/com/github/daggerok/springsecurity/SpringSecurityConfig.java</title>
 <para>
-<programlisting language="xml" linenumbering="unnumbered">@Configuration
+<programlisting language="java" linenumbering="unnumbered">@Configuration
 @EnableWebSecurity
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
@@ -49,7 +49,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 <formalpara>
 <title>src/main/java/com/github/daggerok/springsecurity/SecurityWebApplicationInitializer.java</title>
 <para>
-<programlisting language="xml" linenumbering="unnumbered">public class SecurityWebApplicationInitializer extends AbstractSecurityWebApplicationInitializer {
+<programlisting language="java" linenumbering="unnumbered">public class SecurityWebApplicationInitializer extends AbstractSecurityWebApplicationInitializer {
 
   public SecurityWebApplicationInitializer() {
     super(SpringSecurityConfig.class);
