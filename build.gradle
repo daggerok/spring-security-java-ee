@@ -8,7 +8,7 @@ buildscript {
     logbackVersion = '1.2.3'
     junitJupiterVersion = '5.3.2'
     // tag::content[]
-    springSecuriotyVersion = '4.2.3.RELEASE'
+    springSecurityVersion = '4.2.3.RELEASE'
   }
   // end::content[]
 
@@ -69,9 +69,9 @@ compileJava.dependsOn(processResources)
 // tag::content[]
 dependencies {
   implementation 'commons-logging:commons-logging:1.2'
-  implementation "org.springframework.security:spring-security-web:$springSecuriotyVersion"
-  implementation "org.springframework.security:spring-security-config:$springSecuriotyVersion"
-  implementation "org.springframework.security:spring-security-taglibs:$springSecuriotyVersion"
+  implementation "org.springframework.security:spring-security-web:$springSecurityVersion"
+  implementation "org.springframework.security:spring-security-config:$springSecurityVersion"
+  implementation "org.springframework.security:spring-security-taglibs:$springSecurityVersion"
   // end::content[]
   implementation 'org.webjars:materializecss:1.0.0'
   implementation 'org.webjars:material-design-icons:3.0.1'

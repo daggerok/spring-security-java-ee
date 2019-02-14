@@ -11,7 +11,7 @@ RUN apk --no-cache --update add busybox-suid bash curl unzip sudo openssh-client
          -O /tmp/jce_policy-8.zip \
  && unzip -o /tmp/jce_policy-8.zip -d /tmp \
  && mv -f ${JAVA_HOME}/lib/security ${JAVA_HOME}/lib/backup-security || echo 'nothing to backup' \
- && mv -f /tmp/UnlimitedJCEPolicyJDK8 ${JAVA_HOME}/lib/security \
+ && mv -f /tmp/UnlimitedJCEPolicyJDK8 ${JAVA_HOME}/lib/security || echo 'oops...' \
  && apk del busybox-suid unzip openssh-client shadow wget \
  && rm -rf /var/cache/apk/* /tmp/*
 USER appuser
@@ -29,7 +29,8 @@ ENV JAVA_OPTS="${JAVA_OPTS} ${JAVA_OPTS_ARGS}"
 ENTRYPOINT java ${JAVA_OPTS} -jar ./app.jar
 CMD /bin/bash
 EXPOSE 8080
-HEALTHCHECK --timeout=1s \
-            --retries=66 \
-            CMD curl -u user1:user1Pass -f http://127.0.0.1:8080/v1/ || exit 1
-COPY --chown=appuser ./build/libs/*-microbundle.jar ./app.jar
+HEALTHCHECK CMD wget -o stdout \
+                     --user user1 \
+                     --password user1Pass \
+                     http://127.0.0.1:8080/v1/ || exit 1
+COPY --chown=appuser ./build/*-microbundle.jar ./app.jar
