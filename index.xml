@@ -3,7 +3,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>spring-security-java-ee-microprofile (0.0.1)</title>
-<date>2019-02-14 22:22:28 UTC</date>
+<date>2019-02-14 22:29:03 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -15,7 +15,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2019-02-14 22:22:28 UTC</date>
+<date>2019-02-14 22:29:03 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -82,7 +82,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 <para>
 <programlisting language="gradle" linenumbering="unnumbered">buildscript {
   ext {
-    springSecurityVersion = '4.2.3.RELEASE'
+    springSecurityVersion = '5.1.4.RELEASE'
   }
 }
 dependencies {
@@ -100,7 +100,7 @@ dependencies {
 <title>pom.xml</title>
 <para>
 <programlisting language="xml" linenumbering="unnumbered">  &lt;properties&gt;
-    &lt;spring.security.version&gt;4.2.3.RELEASE&lt;/spring.security.version&gt;
+    &lt;spring.security.version&gt;5.1.4.RELEASE&lt;/spring.security.version&gt;
   &lt;/properties&gt;
   &lt;dependencies&gt;
     &lt;dependency&gt;
