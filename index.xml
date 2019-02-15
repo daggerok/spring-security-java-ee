@@ -2,8 +2,8 @@
 <?asciidoc-toc maxdepth="4"?>
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
-<title>spring-security-java-ee-microprofile (0.0.1)</title>
-<date>2019-02-15 09:20:37 UTC</date>
+<title>spring-security-java-ee (0.0.1)</title>
+<date>2019-02-15 19:40:48 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -15,7 +15,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2019-02-15 09:20:37 UTC</date>
+<date>2019-02-15 19:40:48 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -130,7 +130,7 @@ dependencies {
 </chapter>
 <chapter xml:id="readme">
 <title>README</title>
-<simpara>Read <link xl:href="https://daggerok.github.io/spring-security-java-ee-microprofile">project reference documentation</link></simpara>
+<simpara>Read <link xl:href="https://daggerok.github.io/spring-security-java-ee">project reference documentation</link></simpara>
 <formalpara>
 <title>gradle</title>
 <para>
@@ -160,10 +160,10 @@ http -a user1:user1Pass :8080/v1/</programlisting>
 <title>Links</title>
 <itemizedlist>
 <listitem>
-<simpara><link xl:href="https://github.com/daggerok/spring-security-java-ee-microprofile">GitHub repo</link></simpara>
+<simpara><link xl:href="https://github.com/daggerok/spring-security-java-ee">GitHub repo</link></simpara>
 </listitem>
 <listitem>
-<simpara><link xl:href="https://daggerok.github.io/spring-security-java-ee-microprofile">GitHub pages</link></simpara>
+<simpara><link xl:href="https://daggerok.github.io/spring-security-java-ee">GitHub pages</link></simpara>
 </listitem>
 </itemizedlist>
 </chapter>
