@@ -24,9 +24,6 @@ before_install:
 script:
   - export root=$(pwd)
   #
-  #
-  - cd ${root}/payara-micro/
-  #
   - ./gradlew >/dev/null
   - java -jar -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005 -Djava.net.preferIPv4Stack=true ./build/*-microbundle.jar &
   - wait_for 8080
