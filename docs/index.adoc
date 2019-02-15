@@ -4,11 +4,6 @@ endif::backend-html5[]
 ifndef::backend-html5[]
 = {root-project-name} ({project-version})
 endif::backend-html5[]
-////
-image:https://travis-ci.org/daggerok/{root-project-name}.svg?branch=master["Build Status", link=github-url]
-image:https://gitlab.com/daggerok/{root-project-name}/badges/master/build.svg["Build Status", link=gitlab-url]
-image:https://img.shields.io/bitbucket/pipelines/daggerok/{root-project-name}.svg["Build Status", link=bitbucket-url]
-////
 Maksim Kostromin <daggerok@gmail.com>
 {docdatetime}
 :docinfo:
@@ -27,15 +22,15 @@ Maksim Kostromin <daggerok@gmail.com>
 === spring-security
 
 .src/main/java/com/github/daggerok/springsecurity/SpringSecurityConfig.java
-[source,xml]
+[source,java]
 ----
-include::../src/main/java/com/github/daggerok/springsecurity/SpringSecurityConfig.java[tag=content]
+include::../payara-micro/src/main/java/com/github/daggerok/springsecurity/SpringSecurityConfig.java[tag=content]
 ----
 
 .src/main/java/com/github/daggerok/springsecurity/SecurityWebApplicationInitializer.java
-[source,xml]
+[source,java]
 ----
-include::../src/main/java/com/github/daggerok/springsecurity/SecurityWebApplicationInitializer.java[tag=content]
+include::../payara-micro/src/main/java/com/github/daggerok/springsecurity/SecurityWebApplicationInitializer.java[tag=content]
 ----
 
 .src/main/webapp/WEB-INF/applicationContext.xml
@@ -68,8 +63,3 @@ include::../README.adoc[tags=content]
 ifdef::backend-html5[- link:./index.pdf[Documentation in PFD format]]
 - link:{github-url}[GitHub repo]
 - link:https://daggerok.github.io/{root-project-name}[GitHub pages]
-////
-- link:{gitlab-url}[GitLab repo]
-- link:https://daggerok.gitlab.io/{root-project-name}[GitLab pages]
-- link:{bitbucket-url}[BitBucket repo]
-////

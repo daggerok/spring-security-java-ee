@@ -1,31 +1,14 @@
-= spring-security-java-ee-microprofile image:https://travis-ci.org/daggerok/spring-security-java-ee-microprofile.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/spring-security-java-ee-microprofile"]
+= spring-security-java-ee image:https://travis-ci.org/daggerok/spring-security-java-ee.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/spring-security-java-ee"]
 
 //tag::content[]
 
-Read link:https://daggerok.github.io/spring-security-java-ee-microprofile[project reference documentation]
+Read link:https://daggerok.github.io/spring-security-java-ee[project reference documentation]
 
-.gradle
+.build documentation
 [source,bash]
 ----
-./gradlew bundle
-
-./gradlew start
-# or
-java -jar build/*-microbundle.jar
-
-http :8080 -a admin:adminPass
-----
-
-.maven
-[source,bash]
-----
-./mvnw -Pbundle
-
-./mvnw -Pstart
-# or
-java -jar target/*-microbundle.jar
-
-http -a user1:user1Pass :8080/v1/
+./mvnw -Pdocs
+npx serve target/generated-docs/
 ----
 
 //end::content[]
